@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import List
-from string import ascii_lowercase, ascii_uppercase
+from string import ascii_letters
 
 
 @dataclass
@@ -31,11 +31,7 @@ class Rucksack:
 
 
 def get_item_priority(item: str) -> int:
-    alphabet = ascii_lowercase + ascii_uppercase
-    for i, letter in enumerate(alphabet):
-        if item == letter:
-            return i + 1
-    return 0
+    return ascii_letters.index(item) + 1
 
 
 def get_input_data(source: str) -> List[str]:
